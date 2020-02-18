@@ -50,5 +50,6 @@ spec:
           initialDelaySeconds: 5
           timeoutSeconds: 1
       volumes:
-      - name: data
-        emptyDir: gitlab-postgres-data
+      - name: gitlab-postgres-data
+        persistentVolumeClaim:
+          claimName: gitlab-postgres-data
